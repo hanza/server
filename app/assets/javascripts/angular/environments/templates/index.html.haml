@@ -1,0 +1,24 @@
+%div(ng-controller="EnvironmentsCtrl")
+  %table.table.table-condensed.table-striped.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Computes
+        %th Records
+        %th Template
+        %th Protected
+        %th Actions
+
+      %tr(ng-repeat="e in environments")
+        %td
+          %a(ng-href="/#/environments/{{e.id}}")
+            {{e.name}}
+        %td
+          {{e.computes}}
+        %td
+          {{e.records}}
+        %td
+          {{e.template.name}}
+        %td
+          {{e.protected}}
+        %td

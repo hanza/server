@@ -1,14 +1,27 @@
-= link_to "Hanza", root_path, :class => 'brand'
-%ul.nav
-  - if user_signed_in?
-    %li
-      = link_to 'Logout', destroy_user_session_path, :method=>'delete'
-  - else
-    %li
-      = link_to 'Login', new_user_session_path
-  - if user_signed_in?
-    %li
-      = link_to 'Edit account', edit_user_registration_path
-  - else
-    %li
-      = link_to 'Sign up', new_user_registration_path
+
+.navbar.navbar-fixed-top
+  %nav.navbar-inner
+    .container(ng-controller="HeaderCtrl")
+      %a.btn.btn-navbar{data: {toggle: "collapse", target: ".nav-collapse"}}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to "Hanza", "/#/", :class => 'brand'
+      .nav-collapse.collapse
+        %ul.nav
+          %li{"ng-class"=>"{active: isActive('/') || isActive('/home')}"}
+            = link_to "/#/" do
+              %i.icon-home
+              Home
+          %li{"ng-class"=>"{active: isActive('/environments')}"}
+            = link_to "/#/environments" do
+              Environments
+          -#%li{"ng-class"=>"{active: isActive('/movies')}"}
+          -#  = link_to "/#/movies" do
+          -#    %i.icon-film
+          -#    Movies
+          -#%li{"ng-class"=>"{active: isActive('/downloads')}"}
+          -#  = link_to "/#/downloads" do
+          -#    %i.icon-download-alt
+          -#    Downloads
+

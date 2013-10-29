@@ -1,0 +1,46 @@
+%div(ng-controller="EnvironmentViewCtrl")
+  %div
+    %h3
+      {{environment.name}} .
+      %a(ng-href="/#/organizations/{{environment.organization.id}}")
+        {{environment.organization.name}}
+
+    %table.table.table-condensed.table-striped.table-hover
+      %tr
+        %th Template
+        %td
+          %a(ng-href="/#/templates/{{environment.template.id}}")
+            {{environment.template.name}}
+      %tr
+        %th Protected
+        %td
+          {{environment.protected}}
+      %tr
+        %th Computes
+        %td
+          {{computes.length}}
+      %tr
+        %th Created
+        %td
+          {{environment.created_at}}
+      %tr
+        %th Updated
+        %td
+          {{environment.updated_at}}
+
+  %div
+    %h3 computes
+    %table.table.table-condensed.table-striped.table-hover
+      %tr
+        %th Name
+        %th Balancer
+        %th Actions
+      %tr(ng-repeat="c in environment.computes")
+        %td
+          %a(ng-href="/#/computes/{{c.id}}")
+            {{c.display}}
+        %td
+          %a(ng-href="/#/balancers/{{c.balancer.id}}")
+            {{c.balancer.name}}
+        %td
+          blarg

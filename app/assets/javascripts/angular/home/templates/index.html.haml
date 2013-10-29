@@ -1,0 +1,16 @@
+%div(ng-controller="HomeCtrl")
+  .container
+    .subnav
+      %ul.nav.nav-pills
+        %li.active
+          %a(href="#/")
+            Overview
+        %li
+          %a(href="#/home/recent")
+            Recent
+        %li
+          %a(href="#/home/watch")
+            Watch
+
+  %div(ng-include="'/assets/angular/environments/templates/index.html.haml'")
+
