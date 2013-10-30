@@ -1,0 +1,3 @@
+app.config ['$locationProvider', ($locationProvider) ->
+  $locationProvider.html5Mode false
+]

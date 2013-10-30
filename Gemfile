@@ -11,6 +11,8 @@ gem 'mongoid', '~> 4', :github=>'mongoid/mongoid'
 gem 'bson'
 gem 'bson_ext'
 
+gem 'websocket-rails'
+
 gem 'kaminari'
 gem 'rabl'
 gem 'oj'

@@ -1,0 +1,8 @@
+%div(ng-controller="MessageCtrl")
+  %div
+    %a.btn(ng-click="sendMessage()")
+      sendMessage
+  %table
+    %tr(ng-repeat="m in messages")
+      %td
+        {{m.message}}
